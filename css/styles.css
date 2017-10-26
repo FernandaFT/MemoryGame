@@ -1,0 +1,60 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  max-width: 1200px;
+}
+
+h1 {
+  color: #fff;
+}
+
+img {
+  width: inherit;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  padding: 0;
+}
+
+section {
+  text-align: center;
+  padding: 5px 5px 0 5px;
+}
+
+a, p {
+  color: #fff;
+}
+
+li {
+  background: url(../../../images/faceSmall1.png) no-repeat;
+  width: 23%;
+  height: 13vh;
+  display: inline-block;
+  background-size: cover;
+}
+
+@media screen and (min-width: 1200px) {
+  li {
+    background-image: url(../../../images/face2.png);
+    width: 17%;
+    height: 21vh;
+    background-size: cover;
+  }
+}
+
+.hideCard {
+  visibility: hidden !important;
+}
+
+.back {
+  background: url(../../../images/cat.png) no-repeat;
+  background-size: cover;
+}
