@@ -1,0 +1,33 @@
+.card-6,.card-19{
+    visibility: hidden !important;
+}
+.field {
+    width: 21%;
+    float: left;
+    cursor: pointer; 
+    margin: 4px;
+}
+.inner-wrap {
+    width: 100%;
+    height: 100%
+}
+.front-card {
+    background: url(../../../images/faceSmall1.png) no-repeat;
+    width: 100%;
+    height: 13vh;
+    background-size: cover;
+    text-align: center;
+}
+#card-back {
+    background: url(../../../images/catSmall.png) no-repeat;
+    background-size: cover;
+}
+
+@media screen and (min-width: 700px) {
+    .front-card {
+        background: url(../../../images/face2.png) no-repeat;
+    }
+    #card-back {
+       background: url(../../../images/cat.png) no-repeat; 
+    }
+}
