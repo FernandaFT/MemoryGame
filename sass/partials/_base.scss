@@ -10,10 +10,13 @@ body {
   padding: 0;
   max-width: 1200px;
 }
+header {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 8px;
+}
 h1 {
   color: #fff;
-  // text-align: center;
-  // margin: 0 auto;
 }
 img {
   width: inherit;
@@ -27,7 +30,26 @@ section {
   text-align: center;
   padding: 5px 5px 0 5px;
 }
-a,p {
+a,p,span {
   color: #fff;
+}
+h1 {
+  margin: 0;
+}
+
+@media screen and (min-width: 590px) {
+
+    header {
+        margin-bottom: 47px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 25px;
+    }
+
 }
 
