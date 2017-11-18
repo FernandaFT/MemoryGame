@@ -1,49 +1,51 @@
-function shuffleCard () {
+function Deck (){
 
-    this.card = [];
-    var frontCard = [
-        'catSmall', 
-        'sombreroSmall',
-        'pumpkinSmall',
-        'boneSmall',
-        'ripSmall',
-        'ghostSmall',
-        'catSmall',
-        'boileSmall',
-        'skullSmall',
-        'boiler_orangeSmall'
+    //Card values
+    self.card = [
+         'Cat',
+         'Cat', 
+         'Sombrero',
+         'Sombrero',
+         'Pumpkin',
+         'Pumpkin',
+         'Bone',
+         'Bone',
+         'RIP',
+         'RIP',
+         'Ghost',
+         'Ghost',
+         'boiler',
+         'boiler',
+         'Skull',
+         'Skull',
+         'boiler_orange',
+         'boiler_orange',
+         'Candy',
+         'Candy'
     ];
-
-    for (var c = 0; c < frontCard.length; c++) {
-       this.card.push(frontCard[c]);
-    };
 }
 
-shuffleCard.prototype = {
-    constructor: shuffleCard,
+Deck.prototype = {
+    contructor : Deck,
 
-    // Create Random Card
-    cardRandom : function () {
-        shuffleCard();
-        this.randomCard = new Array();
+    //Create Ramdom Deck 
+    deckRandom : function() {
+        Deck();
+        this.randomDeck = new Array();
         var empty = false;
 
-        while(!empty) {
-            var randomIndex = Math.floor(Math.random() * this.card.length);
-            this.randomCard.push(this.card[randomIndex]);
-            this.card.splice(randomIndex, 1);
-            if(this.cards.length <= 0) empty = true;
+        while(!empty){
+            var randomIndex = Math.floor(Math.random()*self.card.length);
+            this.randomDeck.push(self.card[randomIndex]);
+            self.card.splice(randomIndex, 1);
+            if(self.card.length <= 0) empty = true;
         }
 
-        for( var i=0; i<this.randomCard.length; i++ ) {
-            this.card[i] = this.randomCard[i];
+        for(var i=0; i<this.randomDeck.length; i++){
+            self.card[i] = this.randomDeck[i];
         }
-    },
-
+    },    
 };
-
-var deck = new shuffleCard()
-deck.cardRandom();
+var deck = new Deck();
+deck.deckRandom();
 console.log(deck);
-
-

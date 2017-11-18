@@ -7,91 +7,87 @@
     cursor: pointer; 
     margin: 4px;
 }
-.inner-wrap {
-    width: 100%;
-    height: 100%
-}
 .front-card {
-    background: url(../../../images/faceSmall1.png) no-repeat;
+    background: url(../../../images/faceSmall1.jpg) no-repeat ;
     width: 100%;
     height: 13vh;
     background-size: cover;
     text-align: center;
 }
 #card-cat {
-    background: url(../../../images/catSmall.png) no-repeat;
+    background: url(../../../images/Cat-Small.jpg) no-repeat;
     background-size: cover;
 }
 #card-skull {
-    background: url(../../../images/skullSmall.png) no-repeat;
+    background: url(../../../images/SKull-Small.jpg) no-repeat;
     background-size: cover;
 }
 #card-boiler {
-    background: url(../../../images/boilerSmall.png) no-repeat;
+    background: url(../../../images/boiler-Small.jpg) no-repeat;
     background-size: cover;
 }
 #card-candy {
-    background: url(../../../images/candySmall.png) no-repeat;
+    background: url(../../../images/Candy-Small.jpg) no-repeat;
     background-size: cover;
 }
 #card-ghost {
-    background: url(../../../images/ghostSmall.png) no-repeat;
+    background: url(../../../images/Ghost-Small.jpg) no-repeat;
     background-size: cover;
 }
 #card-rip {
-    background: url(../../../images/ripSmall.png) no-repeat;
+    background: url(../../../images/RIP-Small.jpg) no-repeat;
     background-size: cover;
 }
 #card-boilerOrange {
-    background: url(../../../images/boiler_orangeSmall.png) no-repeat;
+    background: url(../../../images/boiler_orangeSmall.jpg) no-repeat;
     background-size: cover;
 }
 #card-pumpkin {
-    background: url(../../../images/pumpkinSmall.png) no-repeat;
+    background: url(../../../images/Pumpkin-Small.jpg) no-repeat;
     background-size: cover;
 }
 #card-bone {
-    background: url(../../../images/boneSmall.png) no-repeat;
+    background: url(../../../images/Bone-Small.jpg) no-repeat;
     background-size: cover;
 }
 #card-hat {
-    background: url(../../../images/sombreroSmall.png) no-repeat;
+    background: url(../../../images/Sombrero-Small.jpg) no-repeat;
     background-size: cover;
 }
 
 @media screen and (min-width: 700px) {
     .front-card {
-        background: url(../../../images/face2.png) no-repeat;
+        background: url(../../../images/face2.jpg) no-repeat;
     }
     #card-cat {
-        background: url(../../../images/Cat.png) no-repeat;
+        background: url(../../../images/Cat.jpg) no-repeat;
     }
     #card-skull {
-        background: url(../../../images/Skull.png) no-repeat;
+        background: url(../../../images/Skull.jpg) no-repeat;
     }
     #card-boiler {
-        background: url(../../../images/boiler.png) no-repeat;
+        background: url(../../../images/boiler.jpg) no-repeat;
     }
     #card-candy {
-        background: url(../../../images/Candy.png) no-repeat;
+        background: url(../../../images/Candy.jpg) no-repeat;
     }
     #card-ghost {
-        background: url(../../../images/Ghost.png) no-repeat;
+        background: url(../../../images/Ghost.jpg) no-repeat;
     }
     #card-rip {
-        background: url(../../../images/RIP.png) no-repeat;
+        background: url(../../../images/RIP.jpg) no-repeat;
     }
     #card-boilerOrange {
-        background: url(../../../images/boiler_orange.png) no-repeat;
+        background: url(../../../images/boiler_orange.jpg) no-repeat;
     }
     #card-pumpkin {
-        background: url(../../../images/Pumpkin.png) no-repeat;
+        background: url(../../../images/Pumpkin.jpg) no-repeat;
     }
     #card-bone {
-        background: url(../../../images/Bone.png) no-repeat;
+        background: url(../../../images/Bone.jpg) no-repeat;
     }
     #card-hat {
-        background: url(../../../images/Sombrero.png) no-repeat;
+        background: url(../../../images/Sombrero.jpg) no-repeat;
     }
 }
 
