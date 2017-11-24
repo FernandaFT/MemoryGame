@@ -3,16 +3,11 @@
           box-sizing: border-box;
 }
 
-.clearfix:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
 body {
   background-color: #000;
   margin: 0;
   padding: 0;
+  max-width: 1200px;
 }
 
 header {
@@ -21,12 +16,8 @@ header {
   margin-bottom: 8px;
 }
 
-.wrapper-game {
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 63px;
-  position: relative;
+h1 {
+  color: #fff;
 }
 
 img {
@@ -35,8 +26,21 @@ img {
   height: auto;
 }
 
-a, p, span, h1 {
+ul {
+  padding: 0;
+}
+
+section {
+  text-align: center;
+  padding: 5px 5px 0 5px;
+}
+
+a, p, span {
   color: #fff;
+}
+
+h1 {
+  margin: 0;
 }
 
 @media screen and (min-width: 590px) {
@@ -51,48 +55,30 @@ a, p, span, h1 {
   }
 }
 
-@media screen and (min-width: 594px) {
-  .wrapper-game {
-    margin-top: 99px;
+li {
+  background: url(../../../images/faceSmall1.png) no-repeat;
+  width: 23%;
+  height: 13vh;
+  display: inline-block;
+  background-size: cover;
+}
+
+@media screen and (min-width: 1200px) {
+  li {
+    background-image: url(../../../images/face2.png);
+    width: 17%;
+    height: 21vh;
+    background-size: cover;
   }
 }
 
-.card-6, .card-19 {
+.hideCard {
   visibility: hidden !important;
 }
 
-.field {
-  width: 21%;
-  float: left;
-  cursor: pointer;
-  margin: 4px;
-}
-
-.inner-wrap {
-  width: 100%;
-  height: 100%;
-}
-
-.front-card {
-  background: url(../../../images/faceSmall1.png) no-repeat;
-  width: 100%;
-  height: 13vh;
+.back {
+  background: url(../../../images/cat.png) no-repeat;
   background-size: cover;
-  text-align: center;
-}
-
-#card-back {
-  background: url(../../../images/catSmall.png) no-repeat;
-  background-size: cover;
-}
-
-@media screen and (min-width: 700px) {
-  .front-card {
-    background: url(../../../images/face2.png) no-repeat;
-  }
-  #card-back {
-    background: url(../../../images/cat.png) no-repeat;
-  }
 }
 
 .score {
@@ -126,10 +112,6 @@ a, p, span, h1 {
 .btn-reset:hover {
   background-color: #fff;
   color: #000;
-}
-
-.btn-reset:focus {
-  outline: 0;
 }
 
 @media screen and (min-width: 590px) {

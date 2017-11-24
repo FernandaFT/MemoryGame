@@ -1,99 +1,99 @@
-.hiddenCard{
+li {
+    // background: url(../../../images/faceSmall1.jpg) no-repeat;
+    width: 23%;
+    height: 13vh;
+    display: inline-block;
+    // background-size: cover;
+
+}
+.hideCard {
     visibility: hidden !important;
 }
-.field {
-    width: 21%;
-    float: left;
-    cursor: pointer; 
-    margin: 4px;
-}
-.front-card {
-    background: url(../../../images/faceSmall1.jpg) no-repeat ;
-    width: 100%;
-    height: 13vh;
-    background-size: cover;
-    text-align: center;
-}
-#card-cat {
+.card-cat {
     background: url(../../../images/Cat-Small.jpg) no-repeat;
     background-size: cover;
 }
-#card-skull {
+.card-skull {
     background: url(../../../images/SKull-Small.jpg) no-repeat;
     background-size: cover;
 }
-#card-boiler {
+.card-boiler {
     background: url(../../../images/boiler-Small.jpg) no-repeat;
     background-size: cover;
 }
-#card-candy {
+.card-candy {
     background: url(../../../images/Candy-Small.jpg) no-repeat;
     background-size: cover;
 }
-#card-ghost {
+.card-ghost {
     background: url(../../../images/Ghost-Small.jpg) no-repeat;
     background-size: cover;
 }
-#card-rip {
+.card-rip {
     background: url(../../../images/RIP-Small.jpg) no-repeat;
     background-size: cover;
 }
-#card-boilerOrange {
-    background: url(../../../images/boiler_orangeSmall.jpg) no-repeat;
+.card-boilerOrange {
+    background: url(../../../images/boiler_orange-Small.jpg) no-repeat;
     background-size: cover;
 }
-#card-pumpkin {
+.card-pumpkin {
     background: url(../../../images/Pumpkin-Small.jpg) no-repeat;
     background-size: cover;
 }
-#card-bone {
+.card-bone {
     background: url(../../../images/Bone-Small.jpg) no-repeat;
     background-size: cover;
 }
-#card-hat {
+.card-hat {
     background: url(../../../images/Sombrero-Small.jpg) no-repeat;
     background-size: cover;
 }
-
 @media screen and (min-width: 700px) {
-    .front-card {
-        background: url(../../../images/face2.jpg) no-repeat;
+    li {
+        // background-image: url(../../../images/face2.jpg);
+        width: 17%;
+        height: 21vh;
+        // background-size: cover;
     }
-    #card-cat {
+    .card-cat {
         background: url(../../../images/Cat.jpg) no-repeat;
+        background-size: cover;
     }
-    #card-skull {
+    .card-skull {
         background: url(../../../images/Skull.jpg) no-repeat;
+        background-size: cover;
     }
-    #card-boiler {
+    .card-boiler {
         background: url(../../../images/boiler.jpg) no-repeat;
+        background-size: cover;
     }
-    #card-candy {
+    .card-candy {
         background: url(../../../images/Candy.jpg) no-repeat;
+        background-size: cover;
     }
-    #card-ghost {
+    .card-ghost {
         background: url(../../../images/Ghost.jpg) no-repeat;
+        background-size: cover;
     }
-    #card-rip {
+    .card-rip {
         background: url(../../../images/RIP.jpg) no-repeat;
+        background-size: cover;
     }
-    #card-boilerOrange {
+    .card-boilerOrange {
         background: url(../../../images/boiler_orange.jpg) no-repeat;
+        background-size: cover;
     }
-    #card-pumpkin {
+    .card-pumpkin {
         background: url(../../../images/Pumpkin.jpg) no-repeat;
+        background-size: cover;
     }
-    #card-bone {
+    .card-bone {
         background: url(../../../images/Bone.jpg) no-repeat;
+        background-size: cover;
     }
-    #card-hat {
+    .card-hat {
         background: url(../../../images/Sombrero.jpg) no-repeat;
+        background-size: cover;
     }
 }
-
-
-
-
-
-
-

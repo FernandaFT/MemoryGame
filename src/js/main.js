@@ -2,26 +2,26 @@ function Deck (){
 
     //Card values
     self.card = [
-         'Cat',
-         'Cat', 
-         'Sombrero',
-         'Sombrero',
-         'Pumpkin',
-         'Pumpkin',
-         'Bone',
-         'Bone',
-         'RIP',
-         'RIP',
-         'Ghost',
-         'Ghost',
+         'cat',
+         'cat', 
+         'hat',
+         'hat',
+         'pumpkin',
+         'pumpkin',
+         'bone',
+         'bone',
+         'rip',
+         'rip',
+         'ghost',
+         'ghost',
          'boiler',
          'boiler',
-         'Skull',
-         'Skull',
-         'boiler_orange',
-         'boiler_orange',
-         'Candy',
-         'Candy'
+         'skull',
+         'skull',
+         'boilerOrange',
+         'boilerOrange',
+         'candy',
+         'candy'
     ];
 }
 
@@ -46,6 +46,20 @@ Deck.prototype = {
         }
     },    
 };
+
 var deck = new Deck();
 deck.deckRandom();
-console.log(deck);
+
+var allCards = document.getElementById('all-cards');
+var count;
+
+function showCards (){
+
+    for (var i = 0; i < 20; i++) {
+
+        var li = document.createElement('li');
+        li.className = 'card-' + card[i]
+        allCards.appendChild(li);
+    }
+}
+showCards();
