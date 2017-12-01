@@ -32,34 +32,47 @@ Deck.prototype = {
     deckRandom : function() {
         Deck();
         this.randomDeck = new Array();
-        var empty = false;
+        let empty = false;
 
         while(!empty){
-            var randomIndex = Math.floor(Math.random()*self.card.length);
+            let randomIndex = Math.floor(Math.random()*self.card.length);
             this.randomDeck.push(self.card[randomIndex]);
             self.card.splice(randomIndex, 1);
             if(self.card.length <= 0) empty = true;
         }
 
-        for(var i=0; i<this.randomDeck.length; i++){
+        for(let i=0; i<this.randomDeck.length; i++){
             self.card[i] = this.randomDeck[i];
         }
     },    
 };
 
-var deck = new Deck();
+let deck = new Deck();
 deck.deckRandom();
 
-var allCards = document.getElementById('all-cards');
-var count;
+let allCards = document.getElementById('all-cards');
+let count;
 
 function showCards (){
 
-    for (var i = 0; i < 20; i++) {
+    for (let i = 0; i < 20; i++) {
 
-        var li = document.createElement('li');
-        li.className = 'card-' + card[i]
+        let li = document.createElement('li');
+        li.classList.add('card', 'front-card');
+        li.value = i;
         allCards.appendChild(li);
+    }
+
+    let li = document.getElementsByClassName('card');
+
+    for (let i = 0; i < li.length; i++) {
+        li[i].addEventListener('click', function () {
+            this.classList.remove('front-card');
+            this.classList.add('card-' + card[this.value])
+        })
+    }
+    if (li == card) {
+        console.log('ffe');
     }
 }
 showCards();

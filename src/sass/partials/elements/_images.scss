@@ -1,10 +1,12 @@
 li {
-    // background: url(../../../images/faceSmall1.jpg) no-repeat;
     width: 23%;
     height: 13vh;
     display: inline-block;
-    // background-size: cover;
-
+    background-size: cover;
+}
+.front-card {
+    background: url(../../../images/faceSmall1.jpg) no-repeat !important;
+    background-size: cover;
 }
 .hideCard {
     visibility: hidden !important;
@@ -51,10 +53,12 @@ li {
 }
 @media screen and (min-width: 700px) {
     li {
-        // background-image: url(../../../images/face2.jpg);
         width: 17%;
         height: 21vh;
-        // background-size: cover;
+    }
+    .front-card {
+        background-image: url(../../../images/face2.jpg) !important;
+        background-size: cover;
     }
     .card-cat {
         background: url(../../../images/Cat.jpg) no-repeat;
