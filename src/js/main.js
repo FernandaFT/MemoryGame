@@ -67,12 +67,14 @@ function showCards (){
 
     for (let i = 0; i < li.length; i++) {
         li[i].addEventListener('click', function () {
-            this.classList.remove('front-card');
-            this.classList.add('card-' + card[this.value])
+                this.classList.remove('front-card');
+                this.classList.add('card-' + card[this.value])
+            if (card[this.value] === card[this.value]) {
+                console.log('are similar')
+            }else{
+                this.classList.add('front-card')
+            }
         })
-    }
-    if (li == card) {
-        console.log('ffe');
     }
 }
 showCards();

@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-    // margin-top: 10px;
+    margin-top: 10px;
     p, h1 {
         display: inline-block;
     }
@@ -12,12 +12,12 @@
 }
 
 .btn-reset {
-    background-color:red;
+    background-color:#c81818;
     padding: 1%;
     height: 5vh;
     color: #fff;
     border: none;
-    border-radius: 27%;
+    // border-radius: 27%;
     cursor: pointer;
     font-size: 15px;
     &:hover {
@@ -26,7 +26,7 @@
     }
 }
 
-@media screen and (min-width: 590px) {
+@media screen and (min-width: 700px) {
     .btn-reset {
         width: 10%;
         padding: 0;

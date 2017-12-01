@@ -16,7 +16,8 @@ header {
   margin-bottom: 8px;
 }
 h1 {
-  color: #fff;
+  color: #c81818;;
+  font-family: 'csnpwdt_nfiregular';
 }
 img {
   width: inherit;
@@ -25,6 +26,7 @@ img {
 }
 ul {
   padding: 0;
+  padding-top: 20px;
 }
 section {
   text-align: center;
@@ -37,7 +39,16 @@ h1 {
   margin: 0;
 }
 
-@media screen and (min-width: 590px) {
+@font-face {
+    font-family: 'csnpwdt_nfiregular';
+    src: url('../../fonts/csnpwdt_nfi-webfont.woff2') format('woff2'),
+         url('../../fonts/csnpwdt_nfi-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@media screen and (min-width: 700px) {
 
     header {
         margin-bottom: 47px;

@@ -16,13 +16,10 @@ var kss = require('kss')
 var eslint = require('gulp-eslint')
 var babel = require('gulp-babel')
 var concat = require('gulp-concat')
-
-var sassOptions = {
-  outputStyle: 'expanded',
-  eyeglass: {
-    enableImportOnce: false
-  }
-}
+var htmlmin = require('gulp-htmlmin')
+var uglify = require('gulp-uglify')
+var del = require('del')
+var imagemin = require('gulp-imagemin')
 
 //
 // Begin Gulp Tasks.
@@ -32,18 +29,45 @@ var sassOptions = {
 // HTML Dev Workflow.
 //
 gulp.task('html:dev', function () {
-  return gulp.src(['src/**/*html', '!src/sass/*'])
+  return gulp.src(['src/**/*html', '!src/sass/**/*'])
     .pipe(gulp.dest('.tmp'))
     .pipe(connect.reload())
+})
+
+//
+// HTML Prod Workflow.
+//
+gulp.task('html:prod', function () {
+  return gulp.src(['src/**/*html', '!src/sass/**/*'])
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('dist'))
 })
 
 //
 // Images Dev Workflow.
 //
 gulp.task('images:dev', function () {
-  return gulp.src('src/**/*.{png,jpg,jpeg,gif}')
+  return gulp.src('src/**/*.{png,jpg,jpeg,gif,svg,ico}')
     .pipe(gulp.dest('.tmp'))
     .pipe(connect.reload())
+})
+
+//
+// Fonts Dev Workflow.
+//
+gulp.task('fonts:dev', function () {
+  return gulp.src('src/**/*.{woff,woff2}')
+    .pipe(gulp.dest('.tmp'))
+    .pipe(connect.reload())
+})
+
+//
+// Images Prod Workflow.
+//
+gulp.task('images:prod', function () {
+  return gulp.src('src/**/*.{png,jpg,jpeg,gif,svg,ico}')
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist'))
 })
 
 //
@@ -52,11 +76,31 @@ gulp.task('images:dev', function () {
 gulp.task('styles:dev', function () {
   return gulp.src('src/sass/**/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
-    .pipe(prefix(["last 2 versions"]))
+    .pipe(sass(eyeglass({
+      outputStyle: 'expanded',
+      eyeglass: {
+        enableImportOnce: false
+      }
+    })).on('error', sass.logError))
+    .pipe(prefix(['last 2 versions']))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('.tmp/css'))
     .pipe(connect.reload())
+})
+
+//
+// CSS Prod Workflow.
+//
+gulp.task('styles:prod', function () {
+  return gulp.src('src/sass/**/*.scss')
+    .pipe(sass(eyeglass({
+      outputStyle: 'compressed',
+      eyeglass: {
+        enableImportOnce: false
+      }
+    })).on('error', sass.logError))
+    .pipe(prefix(['last 2 versions']))
+    .pipe(gulp.dest('dist/css'))
 })
 
 //
@@ -74,6 +118,19 @@ gulp.task('js:dev', function () {
 })
 
 //
+// Javascript Prod Workflow.
+//
+gulp.task('js:prod', function () {
+  return gulp.src('src/js/**/*.js')
+    .pipe(babel({
+      presets: ['env']
+    }))
+    .pipe(concat('script.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js'))
+})
+
+//
 // Javascript linting.
 //
 // gulp.task('lint', function () {
@@ -87,14 +144,18 @@ gulp.task('js:dev', function () {
 // KSS Styleguide.
 //
 
-// gulp.task('styleguide', function () {
-//   return kss({
-//     source: 'src/sass',
-//     destination: '.tmp/styleguide',
-//     css: '../css/styles.css',
-//     homepage: 'styleguide.md'
-//   })
-// })
+gulp.task('styleguide:generate', function () {
+  return kss({
+    source: 'src/sass',
+    destination: 'styleguide',
+    css: '../css/styles.css',
+    homepage: 'styleguide.md'
+  })
+})
+
+gulp.task('styleguide:watch', function () {
+  gulp.watch('src/sass/**/*', ['styleguide:generate'])
+})
 
 //
 // Dev server.
@@ -112,11 +173,22 @@ gulp.task('connect', function () {
 gulp.task('watch', function () {
   gulp.watch('src/sass/**/*.scss', ['styles:dev'])
   gulp.watch('src/**/*.html', ['html:dev'])
-  gulp.watch('src/**/*.(png|jpe?g|gif)', ['images:dev'])
-  gulp.watch('src/js/**/*.js', [ 'js:dev'])
+  gulp.watch('src/**/*.(png|jpe?g|gif|ico)', ['images:dev'])
+  gulp.watch('src/**/*.(woff|woff2)', ['fonts:dev'])
+  gulp.watch('src/js/**/*.js', ['js:dev'])
+})
+
+gulp.task('clean', function () {
+  return del([
+    '.tmp',
+    'styleguide',
+    'dist'
+  ])
 })
 
 //
-// Task declarations.
+// Composite Task declarations.
 //
-gulp.task('dev', ['html:dev', 'images:dev', 'styles:dev', 'js:dev', 'connect', 'watch'])
+gulp.task('dev', ['html:dev', 'images:dev','fonts:dev', 'styles:dev', 'js:dev', 'connect', 'watch'])
+gulp.task('build', ['html:prod', 'images:prod', 'styles:prod', 'js:prod'])
+gulp.task('styleguide', ['styleguide:generate', 'styleguide:watch'])
