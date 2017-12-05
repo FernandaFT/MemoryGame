@@ -51,9 +51,18 @@ let deck = new Deck();
 deck.deckRandom();
 
 let allCards = document.getElementById('all-cards');
-let count;
+let count = 0;
 
-function showCards (){
+let firstCard;
+let secondCard;
+
+let firstCardId;
+let secondCardId;
+
+let firstCardValue;
+let secondCardValue;
+
+function _showCards (){
 
     for (let i = 0; i < 20; i++) {
 
@@ -67,14 +76,44 @@ function showCards (){
 
     for (let i = 0; i < li.length; i++) {
         li[i].addEventListener('click', function () {
-                this.classList.remove('front-card');
-                this.classList.add('card-' + card[this.value])
-            if (card[this.value] === card[this.value]) {
-                console.log('are similar')
-            }else{
-                this.classList.add('front-card')
+            count++;
+            if (count === 1) {
+                this.classList.add('card-' + card[this.value]);
+                firstCard = card[this.value];
+                firstCardValue = this.value;
+                firstCardId = this;
+                // console.log(firstCard, firstCardValue, firstCardId)
+            }
+
+            if (count === 2) {
+                this.classList.add('card-' + card[this.value]);
+                secondCard = card[this.value];
+                secondCardValue = this.value;
+                secondCardId = this;
+
+                // console.log(secondCard, secondCardValue, secondCardId)
+                setTimeout (function () {
+                
+                    if (firstCard === secondCard) {
+                        if (firstCardValue !== secondCardValue) {
+                            firstCardId.classList.add('hideCard');
+                            secondCardId.classList.add('hideCard');
+                            count = 0;
+                        } else {
+                            // console.log('cheater');
+                            count = 1;
+                        }  
+                    }
+                    else {
+                        count = 0;
+                        firstCardId.className = ' ';
+                        secondCardId.className = ' ';
+                        firstCardId.classList.add('card', 'front-card');
+                        secondCardId.classList.add('card', 'front-card');
+                    }
+                },900)
             }
         })
     }
 }
-showCards();
+_showCards();
